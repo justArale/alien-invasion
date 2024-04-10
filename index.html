@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>I need my space!</title>
+  </head>
+  <body>
+    <main>
+      <!-- #game-intro is initially shown on the game start screen -->
+      <div id="game-intro">
+        <img src="./images/start-screen.jpg" alt="" class="logo-img" />
+        <br />
+        <button id="start-button">Start Game</button>
+        <p>Use the left and right arrow to control the spaceship!</p>
+        <img src="./images/arrows.png" alt="" class="arrows-img" />
+      </div>
+
+      <div id="game-container">
+        <div>
+          <h2>Stats</h2>
+          <p>Score: <span id="score">0</span></p>
+          <p>Lives: <span id="lives">3</span></p>
+        </div>
+        <!-- #game-screen is initially hidden using CSS style display: none -->
+        <div id="game-screen"></div>
+      </div>
+
+      <!-- #game-end is initially hidden using CSS style display: none -->
+      <div id="game-end-intro">
+        <img src="./images/end-screen-intro.jpg" alt="" class="logo-img" />
+        <h1>Game Over</h1>
+      </div>
+      <div id="game-end-screen">
+        <img src="./images/end-screen.jpg" alt="" class="logo-img" />
+        <h1>Game Over</h1>
+        <br />
+        <button id="restart-button">Restart</button>
+      </div>
+    </main>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
