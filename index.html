@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>I need my space!</title>
+    <title>Alien Invasion</title>
+    <link rel="icon" type="image/x-icon" href="./images/enemies/alien2.png" />
   </head>
   <body>
     <main>
@@ -13,9 +14,15 @@
       <div id="game-intro">
         <img src="./images/start-screen.jpg" alt="" class="logo-img" />
         <br />
+        <h1>Welcome Space Lord</h1>
+        <p>you have to protect the earth</p>
         <button id="start-button">Start Game</button>
-        <p>Use the left and right arrow to control the spaceship!</p>
-        <img src="./images/arrows.png" alt="" class="arrows-img" />
+        <p>
+          Use <img src="./images/arrows.jpg" alt="" class="arrows-img" /> to
+          control the spaceship and press
+          <span id="spaceBtn"> SpaceBar </span> to shoot!
+        </p>
+        <!-- <img src="./images/arrows.jpg" alt="" class="arrows-img" /> -->
       </div>
 
       <div id="game-container">
@@ -40,7 +47,10 @@
         <button id="restart-button">Restart</button>
       </div>
     </main>
-
-    <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/enemie.js"></script>
   </body>
 </html>
