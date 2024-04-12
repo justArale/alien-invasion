@@ -27,8 +27,6 @@ class Game {
       "./images/enemies/whiteAlien2.png",
       "./images/enemies/whiteAlien3.png",
     ];
-    // this.enemieProjectile = [];
-    this.playerProjectile = [];
   }
 
   // returns a random enemie from the this.whiteEnemies-array
@@ -36,6 +34,7 @@ class Game {
     const randomIndex = Math.floor(Math.random() * this.whiteEnemies.length);
     return this.whiteEnemies[randomIndex];
   }
+
   start() {
     // Set the height and the width of the game screen
     this.gameScreen.style.height = `${this.height}px`;
@@ -65,28 +64,24 @@ class Game {
     console.log("in the update");
     this.player.move();
 
-    // if (this.player.fireProjectile()) {
-    //   this.playerProjectile.push(fireProjectile());
+    // for (let i = 0; i < this.playerProjectile.length; i++) {
+    //   const projectile = this.playerProjectile[i];
+    //   projectile.move();
+    //   if (this.playerProjectile.didCollide(obstacle)) {
+    //     this.obstacles.element.remove();
+    //     this.score++;
+    //     const scoreContainer = document.getElementById("score");
+    //     scoreContainer.textContent = this.score;
+    //     // Remove the obstacle from the DOM
+    //     obstacle.element.remove();
+    //     // Remove obstacle object from the array
+    //     this.obstacles.splice(i, 1);
+    //     // Update the counter variable to account for the removed obstacle
+    //     i--;
+    //   } else if (projectile.top < this.height) {
+    //     projectile.element.remove();
+    //   }
     // }
-
-    for (let i = 0; i < this.playerProjectile.length; i++) {
-      const protectile = this.playerProjectile[i];
-      protectile.move();
-      if (this.playerProjectile.didCollide(obstacle)) {
-        this.obstacles.element.remove();
-        this.score++;
-        const scoreContainer = document.getElementById("score");
-        scoreContainer.textContent = this.score;
-        // Remove the obstacle from the DOM
-        obstacle.element.remove();
-        // Remove obstacle object from the array
-        this.obstacles.splice(i, 1);
-        // Update the counter variable to account for the removed obstacle
-        i--;
-      } else if (protectile.top < this.height) {
-        protectile.element.remove();
-      }
-    }
 
     // Check for collision and if an obstacle is still on the screen
     for (let i = 0; i < this.obstacles.length; i++) {
@@ -147,31 +142,8 @@ class Game {
   }
 }
 
-/*
-game.js:107 Uncaught TypeError: Cannot read properties of undefined (reading 'gameEndIntroScreen')
-    at showEndScreenIntro (game.js:107:12)
-    at Game.endGame (game.js:111:5)
-    at Game.update (game.js:88:30)
-    at Game.gameLoop (game.js:48:10)
-    at game.js:42:12
-
-    game.js:107 Uncaught TypeError: Cannot read properties of undefined (reading 'gameEndIntroScreen')
-    at showEndScreen (game.js:107:12)
-    at Game.endGame (game.js:113:16)
-    at Game.update (game.js:87:30)
-    at Game.gameLoop (game.js:47:10)
-    at game.js:41:12
-*/
 // if (something) do something
 // something && do something
 
 // if (something) do something else do something else
 // somethinmg ? here if it is true : here if it is false
-
-/*  
-  scoreContainer = document.getElementById("score");
-  scoreContainer.innerHTML = this.score; 
-          
-  livesContainer = document.getElementById("lives");
-  livesContainer.textContent = this.lives;       
-  */

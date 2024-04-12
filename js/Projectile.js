@@ -1,14 +1,13 @@
 class Projectile {
-  constructor(gameScreen, top, left, velocity) {
+  constructor(gameScreen, top, left) {
     this.gameScreen = gameScreen;
     this.top = top;
     this.left = left;
-    this.velocity = velocity;
     this.width = 5;
-    this.height = 15;
+    this.height = 25;
     this.element = document.createElement("img");
 
-    this.element.src = "./images/projectile.png";
+    this.element.src = "./images/projectiles/projectile-green.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -19,13 +18,24 @@ class Projectile {
   }
 
   move() {
-    // Move the protectiles up by passed velocity
-    this.top -= this.velocity; // it moves faster if higher
+    // Move the protectiles
+    this.top -= 20; // how many px between each move
     // Update the protectiles position on the screen
     this.updatePosition();
   }
   updatePosition() {
     this.element.style.top = `${this.top}px`;
+  }
+
+  launch() {
+    const projectileInterval = setInterval(() => {
+      this.move();
+
+      if (this.top + this.height < 0) {
+        clearInterval(projectileInterval);
+        this.element.remove();
+      }
+    }, 90); // counter of interval-speed (in milliseconds)
   }
 
   didCollide(obstacle) {

@@ -3,10 +3,11 @@ class Player extends Component {
     super(gameScreen, left, top, width, height, imgSrc);
     this.directionX = 0;
     this.directionY = 0;
+    this.playerProjectile = [];
   }
 
   move() {
-    // Update player's car position based on directionX and directionY
+    // Update player's space ship position based on directionX and directionY
     this.left += this.directionX;
     this.top += this.directionY;
 
@@ -36,15 +37,18 @@ class Player extends Component {
   }
 
   fireProjectile() {
-    // this.playerProjectile.push(
-    //   new Projectile(this.gameScreen, this.top, this.left + this.width / 2, 6)
-    // );
-    return (this.projectile = new Projectile(
+    this.projectile = new Projectile(
       this.gameScreen,
       this.top,
-      this.left + this.width / 2,
-      6
-    ));
+      this.left + this.width / 2
+    );
+
+    this.playerProjectile.push(this.projectile);
+
+    for (let i = 0; i < this.playerProjectile.length; i++) {
+      const projectile = this.playerProjectile[i];
+      projectile.launch();
+    }
   }
 
   didCollide(obstacle) {

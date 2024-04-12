@@ -45,16 +45,16 @@ window.onload = function () {
       }
     } else if (key === " ") {
       game.player.fireProjectile();
-      // playShootSound();
+      playShootSound();
     }
     // Add the handleKeydown function as an event listener for the keydown event
   }
 
-  // function playShootSound() {
-  //   const shootSound = new Audio("./sounds/laser_shooting_sfx.wav");
-  //   shootSound.currentTime = 0; // Rewind the sound to the beginning
-  //   shootSound.play();
-  // }
+  function playShootSound() {
+    const shootSound = new Audio("sounds/sfx-laser1.ogg");
+    shootSound.currentTime = 0; // Rewind the sound to the beginning
+    shootSound.play();
+  }
 
   window.addEventListener("keydown", handleKeydown);
 
