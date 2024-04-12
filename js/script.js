@@ -29,24 +29,36 @@ window.onload = function () {
       // Update player's directionX and directionY based on the pressed key
       switch (key) {
         case "ArrowLeft":
-          game.player.directionX = -2; // higher number = faster
-          game.player.element.style.transform = "scaleX(1)";
+          game.player.directionX = -5; // higher number = faster
           break;
         case "ArrowUp":
-          game.player.directionY = -2;
+          game.player.directionY = -5;
           break;
         case "ArrowRight":
-          game.player.directionX = 2;
-          game.player.element.style.transform = "scaleX(-1)";
+          game.player.directionX = 5;
           break;
         case "ArrowDown":
-          game.player.directionY = 2;
+          game.player.directionY = 5;
           break;
       }
     } else if (key === " ") {
       game.player.fireProjectile();
       playShootSound();
     }
+
+    // Zusätzliche Logik, um die Richtung des Spielers zurückzusetzen, wenn keine Taste gedrückt wird
+    document.addEventListener("keyup", (event) => {
+      switch (event.key) {
+        case "ArrowLeft":
+        case "ArrowRight":
+          game.player.directionX = 0; // X-Richtung zurücksetzen
+          break;
+        case "ArrowUp":
+        case "ArrowDown":
+          game.player.directionY = 0; // Y-Richtung zurücksetzen
+          break;
+      }
+    });
     // Add the handleKeydown function as an event listener for the keydown event
   }
 
