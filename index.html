@@ -6,16 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/styles.css" />
     <title>Alien Invasion</title>
-    <link rel="icon" type="image/x-icon" href="./images/enemies/alien2.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/enemies/whiteAlien2.png"
+    />
   </head>
   <body>
     <main>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
-        <img src="./images/start-screen.jpg" alt="" class="logo-img" />
-        <br />
         <h1>Welcome Space Lord</h1>
-        <p>you have to protect the earth</p>
+        <br />
+
+        <p>you have to protect the earth!</p>
+        <img src="./images/start-screen.jpg" alt="" class="logo-img" />
+
         <button id="start-button">Start Game</button>
         <p>
           Use <img src="./images/arrows.jpg" alt="" class="arrows-img" /> to
@@ -26,7 +32,7 @@
       </div>
 
       <div id="game-container">
-        <div>
+        <div id="stats">
           <h2>Stats</h2>
           <p>Score: <span id="score">0</span></p>
           <p>Lives: <span id="lives">3</span></p>
@@ -49,8 +55,9 @@
     </main>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/components.js"></script>
-    <script type="text/javascript" src="js/player.js"></script>
-    <script type="text/javascript" src="js/enemie.js"></script>
+    <script type="text/javascript" src="js/Components.js"></script>
+    <script type="text/javascript" src="js/Projectile.js"></script>
+    <script type="text/javascript" src="js/Player.js"></script>
+    <script type="text/javascript" src="js/Obstacle.js"></script>
   </body>
 </html>

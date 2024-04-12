@@ -43,9 +43,19 @@ window.onload = function () {
           game.player.directionY = 2;
           break;
       }
+    } else if (key === " ") {
+      game.player.fireProjectile();
+      // playShootSound();
     }
     // Add the handleKeydown function as an event listener for the keydown event
   }
+
+  // function playShootSound() {
+  //   const shootSound = new Audio("./sounds/laser_shooting_sfx.wav");
+  //   shootSound.currentTime = 0; // Rewind the sound to the beginning
+  //   shootSound.play();
+  // }
+
   window.addEventListener("keydown", handleKeydown);
 
   // Add an event listener to the restart button

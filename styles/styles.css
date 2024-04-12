@@ -1,15 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
 }
 
+h1,
+h2,
+p,
+button {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+}
+
 body {
   text-align: center;
+  background-image: url(../images/background/grid-below-blue.avif);
+  background-size: cover;
 }
 
 img {
-  height: 100vh;
+  height: 50vh;
   width: auto;
 }
 
@@ -31,9 +45,8 @@ img {
   margin-left: 30px;
   overflow: hidden;
   position: relative;
-  /* background-image: url(../images/someSpaceImage.png); */
-  background-size: cover;
-  animation: slide 5s linear infinite;
+  border: 1px solid white;
+  /* animation: slide 5s linear infinite; */
 }
 
 /* @keyframes slide {
@@ -48,7 +61,11 @@ img {
   }
 } */
 
-#game-end {
+#game-end-intro {
+  display: none;
+}
+
+#game-end-screen {
   display: none;
 }
 
@@ -58,7 +75,7 @@ img {
 }
 
 .arrows-img {
-  width: 150px;
+  width: 80px;
   height: auto;
 }
 

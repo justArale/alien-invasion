@@ -10,29 +10,41 @@ class Player extends Component {
     this.left += this.directionX;
     this.top += this.directionY;
 
-    // Ensure the player's car stays within the game screen
+    // Ensure the player's space ship stays within the game screen
     // handles left hand side
-    if (this.left < 30) {
-      this.left = 30;
+    if (this.left < 10) {
+      this.left = 10;
     }
 
     // handles top side
-    if (this.top < 50) {
-      this.top = 50;
+    if (this.top < 10) {
+      this.top = 10;
     }
 
     // handles right hand side
-    if (this.left > this.gameScreen.offsetWidth - this.width - 50) {
-      this.left = this.gameScreen.offsetWidth - this.width - 50;
+    if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
+      this.left = this.gameScreen.offsetWidth - this.width - 10;
     }
 
     // handles bottom side
-    if (this.top > this.gameScreen.offsetHeight - this.height - 50) {
-      this.top = this.gameScreen.offsetHeight - this.height - 50;
+    if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
+      this.top = this.gameScreen.offsetHeight - this.height - 10;
     }
 
-    // Update the player's car position on the screen
+    // Update the player's space ship position on the screen
     this.updatePosition();
+  }
+
+  fireProjectile() {
+    // this.playerProjectile.push(
+    //   new Projectile(this.gameScreen, this.top, this.left + this.width / 2, 6)
+    // );
+    return (this.projectile = new Projectile(
+      this.gameScreen,
+      this.top,
+      this.left + this.width / 2,
+      6
+    ));
   }
 
   didCollide(obstacle) {
