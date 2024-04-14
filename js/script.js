@@ -1,16 +1,30 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
+  const launchScreen = document.getElementById("launch-screen");
+
   let game;
 
   startButton.addEventListener("click", function () {
-    startGame();
+    // launchScreen.style.display = "block";
+    showLaunchScreen();
+    setTimeout(() => startGame(), 1000); // 3sec intro between start screen and game
+    // startGame();
   });
 
   function startGame() {
     console.log("start game");
+    launchScreen.style.display = "none";
     game = new Game(); // add a new game to "class Game"
     game.start(); // runs the start function in "class Game"
+  }
+
+  function showLaunchScreen() {
+    launchScreen.style.display = "flex";
+    const startScreen = document.getElementById("game-start-screen");
+    startScreen.style.display = "none";
+    const stats = document.getElementById("game-stats");
+    stats.style.display = "none";
   }
 
   // function that handles the keydown event

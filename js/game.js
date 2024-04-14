@@ -1,17 +1,19 @@
 class Game {
   // code to be added
   constructor() {
-    this.startScreen = document.getElementById("game-intro");
+    this.startScreen = document.getElementById("game-start-screen");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end-screen");
-    this.stats = document.getElementById("stats");
+    this.gameContainer = document.getElementById("game-container");
+    this.stats = document.getElementById("game-stats");
+    this.livesContainer = document.getElementById("lives");
 
     this.player = new Player(
       this.gameScreen,
       200,
       500,
-      50,
-      65,
+      64,
+      48,
       "./images/game-spaceship.svg"
     );
     this.height = 600;
@@ -47,7 +49,11 @@ class Game {
     // Show the game screen
     this.gameScreen.style.display = "block";
     // Show the stats
-    stats.style.display = "block";
+    this.stats.style.display = "flex";
+    this.gameContainer.style.display = "block";
+    this.livesContainer.textContent = this.lives;
+    // Hide end-screen by restart
+    this.gameEndScreen.style.display = "none";
 
     // Runs the gameLoop on the frequency od 60 times per secends.
     // Also stores the ID of the interval.
@@ -84,10 +90,7 @@ class Game {
         // Update the counter variable to account for the removed obstacle
         i--;
       } // If the obstacle is off the screen (at the bottom) or shooten
-      else if (
-        obstacle.top > this.height ||
-        this.player.projectileHit(obstacle)
-      ) {
+      else if (this.player.projectileHit(obstacle)) {
         // Increase the score by 1
         this.score++;
         const scoreContainer = document.getElementById("score");
@@ -98,6 +101,18 @@ class Game {
         this.obstacles.splice(i, 1);
         // Update the counter variable to account for the removed obstacle
         i--;
+      } else if (obstacle.top > this.height) {
+        if (this.score === 0) {
+          const livesContainer = document.getElementById("lives");
+          livesContainer.textContent = this.lives;
+          this.lives--;
+        } else {
+          this.score--;
+        }
+        const scoreContainer = document.getElementById("score");
+        scoreContainer.textContent = this.score;
+        obstacle.element.remove();
+        this.obstacles.splice(i, 1);
       }
     }
     // If lives are 0, end the game
@@ -119,11 +134,10 @@ class Game {
     // Hide game screem
     this.gameScreen.style.display = "none";
     this.showEndScreen();
-    // setTimeout(() => this.showEndScreen(), 3000); // 3sec intro between game and end screen
   }
 
   showEndScreen() {
-    stats.style.display = "none";
+    this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
   }
 }
