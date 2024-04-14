@@ -3,8 +3,8 @@ class Game {
   constructor() {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
-    this.gameEndIntroScreen = document.getElementById("game-end-intro");
     this.gameEndScreen = document.getElementById("game-end-screen");
+    this.stats = document.getElementById("stats");
 
     this.player = new Player(
       this.gameScreen,
@@ -12,7 +12,7 @@ class Game {
       500,
       50,
       65,
-      "./images/whiteSpaceShip.png"
+      "./images/game-spaceship.svg"
     );
     this.height = 600;
     this.width = 500;
@@ -23,9 +23,10 @@ class Game {
     this.gameIntervalId;
     this.gameLoopFrequency = Math.round(1000 / 60); // 60fps
     this.whiteEnemies = [
-      "./images/enemies/whiteAlien1.png",
-      "./images/enemies/whiteAlien2.png",
-      "./images/enemies/whiteAlien3.png",
+      "./images/enemies/game-alien-1.svg",
+      "./images/enemies/game-alien-2.svg",
+      "./images/enemies/game-alien-3.svg",
+      "./images/enemies/game-alien-4.svg",
     ];
   }
 
@@ -45,6 +46,8 @@ class Game {
 
     // Show the game screen
     this.gameScreen.style.display = "block";
+    // Show the stats
+    stats.style.display = "block";
 
     // Runs the gameLoop on the frequency od 60 times per secends.
     // Also stores the ID of the interval.
@@ -115,13 +118,12 @@ class Game {
     this.gameIsOver = true;
     // Hide game screem
     this.gameScreen.style.display = "none";
-    this.gameEndIntroScreen.style.display = "block";
-    // this.showEndScreen();
-    setTimeout(() => this.showEndScreen(), 3000);
+    this.showEndScreen();
+    // setTimeout(() => this.showEndScreen(), 3000); // 3sec intro between game and end screen
   }
 
   showEndScreen() {
-    this.gameEndIntroScreen.style.display = "none";
+    stats.style.display = "none";
     this.gameEndScreen.style.display = "block";
   }
 }

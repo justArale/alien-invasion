@@ -50,11 +50,11 @@ window.onload = function () {
       switch (event.key) {
         case "ArrowLeft":
         case "ArrowRight":
-          game.player.directionX = 0; // X-Richtung zurücksetzen
+          game.player.directionX = 0; // reset X-direction
           break;
         case "ArrowUp":
         case "ArrowDown":
-          game.player.directionY = 0; // Y-Richtung zurücksetzen
+          game.player.directionY = 0; // reset Y-direction
           break;
       }
     });
@@ -71,6 +71,7 @@ window.onload = function () {
 
   // The function that reloads the page to start a new game
   function restartGame() {
-    location.reload();
+    // location.reload();
+    startGame();
   }
 };

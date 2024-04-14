@@ -16,23 +16,16 @@
     <main>
       <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
-        <h1>Welcome Space Lord</h1>
-        <br />
-
-        <p>you have to protect the earth!</p>
-        <img src="./images/start-screen.jpg" alt="" class="logo-img" />
-
+        <div id="start-screen-header">
+          <h1>Alien Invasion</h1>
+          <br />
+          <p>Highscore: <span id="highScore">0</span></p>
+        </div>
         <button id="start-button">Start Game</button>
-        <p>
-          Use <img src="./images/arrows.jpg" alt="" class="arrows-img" /> to
-          control the spaceship and press
-          <span id="spaceBtn"> SpaceBar </span> to shoot!
-        </p>
-        <!-- <img src="./images/arrows.jpg" alt="" class="arrows-img" /> -->
       </div>
 
       <div id="game-container">
-        <div id="stats">
+        <div id="stats" style="display: none">
           <h2>Stats</h2>
           <p>Score: <span id="score">0</span></p>
           <p>Lives: <span id="lives">3</span></p>
@@ -42,12 +35,7 @@
       </div>
 
       <!-- #game-end is initially hidden using CSS style display: none -->
-      <div id="game-end-intro">
-        <img src="./images/end-screen-intro.jpg" alt="" class="logo-img" />
-        <h1>You had one job!</h1>
-      </div>
       <div id="game-end-screen">
-        <img src="./images/end-screen.jpg" alt="" class="logo-img" />
         <h1>Game Over</h1>
         <br />
         <button id="restart-button">Restart</button>

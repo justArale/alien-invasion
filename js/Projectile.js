@@ -7,7 +7,7 @@ class Projectile {
     this.top = top - this.height; // position = players top - own size
     this.element = document.createElement("img");
 
-    this.element.src = "./images/projectiles/projectile-green.png";
+    this.element.src = "./images/projectiles/game-spaceship-laser.svg";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -56,6 +56,5 @@ class Projectile {
   // removes the projectile which hit an obstacle
   destroyProjectile() {
     this.element.remove();
-    console.log("projectile removed");
   }
 }
