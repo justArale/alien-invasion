@@ -37,18 +37,43 @@ class Player extends Component {
   }
 
   fireProjectile() {
-    this.projectile = new Projectile(
+    const projectile = new Projectile(
       this.gameScreen,
       this.top,
       this.left + this.width / 2
     );
 
-    this.playerProjectile.push(this.projectile);
+    this.playerProjectile.push(projectile);
 
+    const shootSound = new Audio("sounds/sfx-laser1.ogg");
+    shootSound.play();
     for (let i = 0; i < this.playerProjectile.length; i++) {
       const projectile = this.playerProjectile[i];
+
       projectile.launch();
     }
+  }
+
+  //   projectileHit(obstacle) {
+  //     for (let i = 0; i < this.playerProjectile.length; i++) {
+  //       if (this.playerProjectile[i].didHit(obstacle)) {
+  //         this.playerProjectile[i].destroyProjectile();
+  //         return true;
+  //       } else {
+  //         return false;
+  //       }
+  //     }
+  //   }
+
+  projectileHit(obstacle) {
+    for (let i = 0; i < this.playerProjectile.length; i++) {
+      const projectile = this.playerProjectile[i];
+      if (projectile.didHit(obstacle)) {
+        projectile.destroyProjectile();
+        return true;
+      }
+    }
+    return false;
   }
 
   didCollide(obstacle) {

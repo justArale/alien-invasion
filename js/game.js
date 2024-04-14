@@ -53,7 +53,7 @@ class Game {
     }, this.gameLoopFrequency); // set the frequency
   }
   gameLoop() {
-    console.log("in the game loop"); // check if it's working
+    // console.log("in the game loop"); // check if it's working
 
     this.update();
 
@@ -61,27 +61,8 @@ class Game {
     this.gameIsOver && clearInterval(this.gameIntervalId); // short version of if-statement *
   }
   update() {
-    console.log("in the update");
+    //  console.log("in the update");
     this.player.move();
-
-    // for (let i = 0; i < this.playerProjectile.length; i++) {
-    //   const projectile = this.playerProjectile[i];
-    //   projectile.move();
-    //   if (this.playerProjectile.didCollide(obstacle)) {
-    //     this.obstacles.element.remove();
-    //     this.score++;
-    //     const scoreContainer = document.getElementById("score");
-    //     scoreContainer.textContent = this.score;
-    //     // Remove the obstacle from the DOM
-    //     obstacle.element.remove();
-    //     // Remove obstacle object from the array
-    //     this.obstacles.splice(i, 1);
-    //     // Update the counter variable to account for the removed obstacle
-    //     i--;
-    //   } else if (projectile.top < this.height) {
-    //     projectile.element.remove();
-    //   }
-    // }
 
     // Check for collision and if an obstacle is still on the screen
     for (let i = 0; i < this.obstacles.length; i++) {
@@ -100,7 +81,10 @@ class Game {
         // Update the counter variable to account for the removed obstacle
         i--;
       } // If the obstacle is off the screen (at the bottom) or shooten
-      else if (obstacle.top > this.height) {
+      else if (
+        obstacle.top > this.height ||
+        this.player.projectileHit(obstacle)
+      ) {
         // Increase the score by 1
         this.score++;
         const scoreContainer = document.getElementById("score");
@@ -118,7 +102,7 @@ class Game {
 
     // Create a new obstacle based on random probability
     // When there are 1 other obstacle on the screen
-    if (Math.random() > 0.98 && this.obstacles.length < 2) {
+    if (Math.random() > 0.98 && this.obstacles.length < 1) {
       this.obstacles.push(new Obstacle(this.gameScreen, this.getRandomEnemy()));
     }
   }

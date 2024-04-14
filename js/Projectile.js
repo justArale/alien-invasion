@@ -1,10 +1,10 @@
 class Projectile {
   constructor(gameScreen, top, left) {
     this.gameScreen = gameScreen;
-    this.top = top;
     this.left = left;
     this.width = 5;
     this.height = 25;
+    this.top = top - this.height; // position = players top - own size
     this.element = document.createElement("img");
 
     this.element.src = "./images/projectiles/projectile-green.png";
@@ -19,7 +19,7 @@ class Projectile {
 
   move() {
     // Move the protectiles
-    this.top -= 20; // how many px between each move
+    this.top -= 8; // how many px between each move
     // Update the protectiles position on the screen
     this.updatePosition();
   }
@@ -35,10 +35,10 @@ class Projectile {
         clearInterval(projectileInterval);
         this.element.remove();
       }
-    }, 90); // counter of interval-speed (in milliseconds)
+    }, 20); // counter of interval-speed (in milliseconds)
   }
 
-  didCollide(obstacle) {
+  didHit(obstacle) {
     const projectileRect = this.element.getBoundingClientRect();
     const obstacleRect = obstacle.element.getBoundingClientRect();
 
@@ -52,5 +52,10 @@ class Projectile {
     } else {
       return false;
     }
+  }
+  // removes the projectile which hit an obstacle
+  destroyProjectile() {
+    this.element.remove();
+    console.log("projectile removed");
   }
 }

@@ -43,7 +43,6 @@ window.onload = function () {
       }
     } else if (key === " ") {
       game.player.fireProjectile();
-      playShootSound();
     }
 
     // Zusätzliche Logik, um die Richtung des Spielers zurückzusetzen, wenn keine Taste gedrückt wird
@@ -62,12 +61,6 @@ window.onload = function () {
     // Add the handleKeydown function as an event listener for the keydown event
   }
 
-  function playShootSound() {
-    const shootSound = new Audio("sounds/sfx-laser1.ogg");
-    shootSound.currentTime = 0; // Rewind the sound to the beginning
-    shootSound.play();
-  }
-
   window.addEventListener("keydown", handleKeydown);
 
   // Add an event listener to the restart button
@@ -76,7 +69,7 @@ window.onload = function () {
     restartGame();
   });
 
-  // The function that reloads the page to start a new gamr
+  // The function that reloads the page to start a new game
   function restartGame() {
     location.reload();
   }
