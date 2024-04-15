@@ -7,7 +7,7 @@ class Obstacle extends Component {
 
   move() {
     // Move the obstacle down by 3px
-    this.top += 2; // if higher like 4 it moves faster
+    this.top += 3; // if higher like 4 it moves faster
     // Update the obstacle's position on the screen
     this.updatePosition();
   }

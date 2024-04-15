@@ -14,7 +14,7 @@ window.onload = function () {
   startButton.addEventListener("click", function () {
     // launchScreen.style.display = "block";
     showLaunchScreen();
-    setTimeout(() => startGame(), 1000); // 3sec intro between start screen and game
+    setTimeout(() => startGame(), 3000); // 3sec intro between start screen and game
     // startGame();
   });
 

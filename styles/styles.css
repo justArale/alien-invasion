@@ -92,17 +92,24 @@ body {
   width: 100%;
 }
 
-/* @keyframes slide {
+.explosion {
+  animation: 0.25s infinite alternate explode;
+}
+
+@keyframes explode {
   0% {
-    background-position: 0 -1000px;
+    transform: scaleX(1);
   }
-  95% {
-    background-position: 0 0;
+  50% {
+    transform: scaleX(1);
+  }
+  51% {
+    transform: scaleX(-1);
   }
   100% {
-    background-position: 0 50px;
+    transform: scaleX(-1);
   }
-} */
+}
 
 #game-end-screen {
   display: none;

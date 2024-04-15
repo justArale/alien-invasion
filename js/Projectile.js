@@ -58,7 +58,7 @@ class Projectile {
     const explosion = new Explosion(
       this.gameScreen,
       obstacle.top,
-      obstacle.left + obstacle.width / 2
+      obstacle.left
     );
     explosion.showExplosion();
   }
