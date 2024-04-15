@@ -16,7 +16,7 @@ class Game {
       500,
       64,
       48,
-      "./images/game-spaceship.svg"
+      "images/game-spaceship.svg"
     );
     this.height = 600;
     this.width = 500;
@@ -28,10 +28,10 @@ class Game {
     this.gameIntervalId;
     this.gameLoopFrequency = Math.round(1000 / 60); // 60fps
     this.whiteEnemies = [
-      "./images/enemies/game-alien-1.svg",
-      "./images/enemies/game-alien-2.svg",
-      "./images/enemies/game-alien-3.svg",
-      "./images/enemies/game-alien-4.svg",
+      "images/enemies/game-alien-1.svg",
+      "images/enemies/game-alien-2.svg",
+      "images/enemies/game-alien-3.svg",
+      "images/enemies/game-alien-4.svg",
     ];
   }
 

@@ -1,6 +1,6 @@
 # Alien Invasion Game
 
-![Alien Invasion](./images/Preview.png)
+![Alien Invasion](images/Preview.png)
 
 ## Description
 
@@ -25,7 +25,7 @@ Enjoy the adrenaline-pumping action of Alien Invasion and embark on a journey ba
 
 ## Game Preview
 
-![Game Preview](./images/game-screen-preview.png)
+![Game Preview](images/game-screen-preview.png)
 
 ## How to Run
 

@@ -7,7 +7,7 @@ class Explosion {
     this.top = top;
     this.element = document.createElement("img");
 
-    this.element.src = "./images/projectiles/game-alien-explode.svg";
+    this.element.src = "images/projectiles/game-alien-explode.svg";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;

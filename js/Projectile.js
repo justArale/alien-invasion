@@ -7,7 +7,7 @@ class Projectile {
     this.top = top - this.height; // position = players top - own size
     this.element = document.createElement("img");
 
-    this.element.src = "./images/projectiles/game-spaceship-laser.svg";
+    this.element.src = "images/projectiles/game-spaceship-laser.svg";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
