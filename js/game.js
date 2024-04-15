@@ -120,9 +120,19 @@ class Game {
     this.lives === 0 && this.endGame();
 
     // Create a new obstacle based on random probability
-    // When there are under 5 other obstacle on the screen
-    if (Math.random() > 0.98 && this.obstacles.length < 5) {
-      this.obstacles.push(new Obstacle(this.gameScreen, this.getRandomEnemy()));
+    // Amount of obstacle depends on the score
+    if (this.score < 10) {
+      if (Math.random() > 0.98 && this.obstacles.length < 3) {
+        this.obstacles.push(
+          new Obstacle(this.gameScreen, this.getRandomEnemy())
+        );
+      }
+    } else {
+      if (Math.random() > 0.98 && this.obstacles.length < this.score / 2.5) {
+        this.obstacles.push(
+          new Obstacle(this.gameScreen, this.getRandomEnemy())
+        );
+      }
     }
 
     if (this.highScore < this.score) {
