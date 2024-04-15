@@ -23,7 +23,7 @@ class Game {
     this.obstacles = [];
     this.score = 0;
     this.highScore = localStorage.getItem("highScore") || 0;
-    this.lives = 1;
+    this.lives = 3;
     this.gameIsOver = false;
     this.gameIntervalId;
     this.gameLoopFrequency = Math.round(1000 / 60); // 60fps
@@ -120,8 +120,8 @@ class Game {
     this.lives === 0 && this.endGame();
 
     // Create a new obstacle based on random probability
-    // When there are 1 other obstacle on the screen
-    if (Math.random() > 0.98 && this.obstacles.length < 1) {
+    // When there are under 5 other obstacle on the screen
+    if (Math.random() > 0.98 && this.obstacles.length < 5) {
       this.obstacles.push(new Obstacle(this.gameScreen, this.getRandomEnemy()));
     }
 

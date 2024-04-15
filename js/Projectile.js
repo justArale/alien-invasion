@@ -53,6 +53,17 @@ class Projectile {
       return false;
     }
   }
+
+  // showExplosion(obstacle) {
+  //   const explosion = new Explosion(
+  //     this.gameScreen,
+  //     obstacle.top,
+  //     obstacle.left
+  //   );
+  //   explosion.showExplosion();
+  //   // console.log("show explosion"); // works
+  // }
+
   // removes the projectile which hit an obstacle
   destroyProjectile() {
     this.element.remove();

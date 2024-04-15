@@ -11,4 +11,14 @@ class Obstacle extends Component {
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
+
+  // launch() {
+  //   const obstacleInterval = setInterval(() => {
+  //     this.move();
+
+  //     if (this.top + this.height > 0) {
+  //       clearInterval(obstacleInterval);
+  //     }
+  //   }, 1000); // counter of interval-speed (in milliseconds)
+  // }
 }
