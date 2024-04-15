@@ -2,6 +2,12 @@ window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
   const launchScreen = document.getElementById("launch-screen");
+  const highScoreContainer = document.querySelector(
+    "#start-screen-header .highScore"
+  );
+
+  // Set highscore from localstorage to the start screen
+  highScoreContainer.innerHTML = localStorage.getItem("highScore");
 
   let game;
 

@@ -7,7 +7,9 @@ class Game {
     this.gameContainer = document.getElementById("game-container");
     this.stats = document.getElementById("game-stats");
     this.livesContainer = document.getElementById("lives");
-
+    this.highScoreContainer = document.querySelector(
+      "#end-screen-header .highScore"
+    );
     this.player = new Player(
       this.gameScreen,
       200,
@@ -20,6 +22,7 @@ class Game {
     this.width = 500;
     this.obstacles = [];
     this.score = 0;
+    this.highScore = localStorage.getItem("highScore") || 0;
     this.lives = 1;
     this.gameIsOver = false;
     this.gameIntervalId;
@@ -109,8 +112,6 @@ class Game {
         } else {
           this.score--;
         }
-        const scoreContainer = document.getElementById("score");
-        scoreContainer.textContent = this.score;
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
       }
@@ -123,27 +124,39 @@ class Game {
     if (Math.random() > 0.98 && this.obstacles.length < 1) {
       this.obstacles.push(new Obstacle(this.gameScreen, this.getRandomEnemy()));
     }
+
+    if (this.highScore < this.score) {
+      this.setHighScore(this.score);
+    }
   }
+
+  // Set highscore to localstorage
+  setHighScore = (score) => {
+    // update highscore
+    this.highScore = score;
+
+    // Set highscore to localstorage
+    localStorage.setItem("highScore", JSON.stringify(this.highScore));
+  };
 
   // Create a new method responsible for ending the game
   endGame() {
     this.player.element.remove();
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
-
+    document.getElementById("score").innerHTML = 0;
     this.gameIsOver = true;
     // Hide game screem
     this.gameScreen.style.display = "none";
+    // Set score to high score if it's higher
+
     this.showEndScreen();
   }
 
   showEndScreen() {
     this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
+
+    // Set highscore from localstorage to the end screen
+    this.highScoreContainer.innerHTML = localStorage.getItem("highScore");
   }
 }
-
-// if (something) do something
-// something && do something
-
-// if (something) do something else do something else
-// somethinmg ? here if it is true : here if it is false
