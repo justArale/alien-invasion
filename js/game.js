@@ -128,7 +128,7 @@ class Game {
         );
       }
     } else {
-      if (Math.random() > 0.98 && this.obstacles.length < this.score / 2.5) {
+      if (Math.random() > 0.98 && this.obstacles.length < this.score / 1.5) {
         this.obstacles.push(
           new Obstacle(this.gameScreen, this.getRandomEnemy())
         );
