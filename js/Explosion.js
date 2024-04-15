@@ -2,8 +2,8 @@ class Explosion {
   constructor(gameScreen, top, left) {
     this.gameScreen = gameScreen;
     this.left = left;
-    this.width = 5;
-    this.height = 5;
+    this.width = 20;
+    this.height = 20;
     this.top = top;
     this.element = document.createElement("img");
 
@@ -18,11 +18,21 @@ class Explosion {
     // console.log("explosion append"); // works
   }
 
+  launch() {
+    const explosionIntervall = setInterval(() => {
+      this.grow();
+      if (this.width > 32 && this.height > 32) {
+        clearInterval(explosionIntervall);
+        this.element.remove();
+      }
+    }, 600); // counter of interval-speed (in milliseconds)
+  }
+
   grow() {
-    // Move the protectiles
+    // increase the imgagesize
     this.width += 4;
     this.height += 4;
-    // Update the protectiles position on the screen
+    // Update the imgagesize on the screen
     this.updateSize();
   }
 
@@ -32,8 +42,6 @@ class Explosion {
   }
 
   showExplosion() {
-    // this.top = obstacle.top;
-    this.grow();
-    // console.log("show explosion"); // works
+    this.launch();
   }
 }

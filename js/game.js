@@ -107,8 +107,8 @@ class Game {
       } else if (obstacle.top > this.height) {
         if (this.score === 0) {
           const livesContainer = document.getElementById("lives");
-          livesContainer.textContent = this.lives;
           this.lives--;
+          livesContainer.textContent = this.lives;
         } else {
           this.score--;
         }

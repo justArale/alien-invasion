@@ -49,7 +49,6 @@ class Player extends Component {
     shootSound.play();
     for (let i = 0; i < this.playerProjectile.length; i++) {
       const projectile = this.playerProjectile[i];
-
       projectile.launch();
     }
   }
@@ -69,7 +68,7 @@ class Player extends Component {
     for (let i = 0; i < this.playerProjectile.length; i++) {
       const projectile = this.playerProjectile[i];
       if (projectile.didHit(obstacle)) {
-        // projectile.showExplosion(obstacle);
+        projectile.showExplosion(obstacle);
         projectile.destroyProjectile();
         return true;
       }

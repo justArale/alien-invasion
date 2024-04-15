@@ -54,15 +54,14 @@ class Projectile {
     }
   }
 
-  // showExplosion(obstacle) {
-  //   const explosion = new Explosion(
-  //     this.gameScreen,
-  //     obstacle.top,
-  //     obstacle.left
-  //   );
-  //   explosion.showExplosion();
-  //   // console.log("show explosion"); // works
-  // }
+  showExplosion(obstacle) {
+    const explosion = new Explosion(
+      this.gameScreen,
+      obstacle.top,
+      obstacle.left + obstacle.width / 2
+    );
+    explosion.showExplosion();
+  }
 
   // removes the projectile which hit an obstacle
   destroyProjectile() {
