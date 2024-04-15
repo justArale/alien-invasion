@@ -106,12 +106,17 @@ class Game {
         i--;
       } else if (obstacle.top > this.height) {
         if (this.score === 0) {
-          const livesContainer = document.getElementById("lives");
+          // If the score is 0, decrease lives by 1
           this.lives--;
+          const livesContainer = document.getElementById("lives");
           livesContainer.textContent = this.lives;
         } else {
+          // Decrease the score by 1
           this.score--;
+          const scoreContainer = document.getElementById("score");
+          scoreContainer.textContent = this.score;
         }
+
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
       }
