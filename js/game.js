@@ -121,7 +121,7 @@ class Game {
 
     // Create a new obstacle based on random probability
     // Amount of obstacle depends on the score
-    if (this.score < 10) {
+    if (this.score < 7) {
       if (Math.random() > 0.98 && this.obstacles.length < 3) {
         this.obstacles.push(
           new Obstacle(this.gameScreen, this.getRandomEnemy())
