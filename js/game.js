@@ -22,7 +22,7 @@ class Game {
     this.width = 500;
     this.obstacles = [];
     this.score = 0;
-    this.highScore = localStorage.getItem("highScore") || 0;
+    this.highScore = localStorage.getItem("highScore") || "0";
     this.lives = 3;
     this.gameIsOver = false;
     this.gameIntervalId;
