@@ -38,9 +38,9 @@ window.onload = function () {
     const key = event.key;
     const possibleKeystrokes = [
       "ArrowLeft",
-      "ArrowUp",
+      // "ArrowUp",
       "ArrowRight",
-      "ArrowDown",
+      // "ArrowDown",
     ];
     // Check if the pressed key is on the possibleKeyStrokes array
     if (possibleKeystrokes.includes(key)) {
@@ -51,15 +51,15 @@ window.onload = function () {
         case "ArrowLeft":
           game.player.directionX = -5; // higher number = faster
           break;
-        case "ArrowUp":
-          game.player.directionY = -5;
-          break;
+        // case "ArrowUp":
+        //   game.player.directionY = -5;
+        //   break;
         case "ArrowRight":
           game.player.directionX = 5;
           break;
-        case "ArrowDown":
-          game.player.directionY = 5;
-          break;
+        // case "ArrowDown":
+        //   game.player.directionY = 5;
+        //   break;
       }
     } else if (key === " ") {
       game.player.fireProjectile();
@@ -72,10 +72,10 @@ window.onload = function () {
         case "ArrowRight":
           game.player.directionX = 0; // reset X-direction
           break;
-        case "ArrowUp":
-        case "ArrowDown":
-          game.player.directionY = 0; // reset Y-direction
-          break;
+        // case "ArrowUp":
+        // case "ArrowDown":
+        //   game.player.directionY = 0; // reset Y-direction
+        //   break;
       }
     });
     // Add the handleKeydown function as an event listener for the keydown event

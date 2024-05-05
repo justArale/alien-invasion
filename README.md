@@ -12,16 +12,9 @@ Enjoy the adrenaline-pumping action of Alien Invasion and embark on a journey ba
 
 ## How to Play
 
-- Use the arrow keys to move your spaceship.
-- Press the spacebar to shoot projectiles.
-- Dodge incoming alien enemies and shoot them down to earn points.
-- The game ends when you run out of lives.
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
+- Control spaceship with <kbd>←</kbd> and <kbd>→</kbd> arrow keys
+- Shoot with <kbd>spacebar</kbd>
+- Earn points with each destroyed alien
 
 ## Game Preview
 
@@ -33,4 +26,4 @@ To play the game, simply open the `index.html` file in your web browser.
 
 ## Credits
 
-This game was created by [Arale].
+Game created by [Arale](https://github.com/justArale).
