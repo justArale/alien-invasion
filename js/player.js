@@ -30,7 +30,7 @@ class Player extends Component {
     // handles bottom side
     // if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
     //   this.top = this.gameScreen.offsetHeight - this.height - 10;
-    // }
+    // }ƒ
 
     // Update the player's space ship position on the screen
     this.updatePosition();

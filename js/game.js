@@ -10,6 +10,7 @@ class Game {
     this.highScoreContainer = document.querySelector(
       "#end-screen-header .highScore"
     );
+    this.yourScore = document.querySelector(".yourScoreValue");
     this.player = new Player(
       this.gameScreen,
       200,
@@ -173,5 +174,6 @@ class Game {
 
     // Set highscore from localstorage to the end screen
     this.highScoreContainer.innerHTML = localStorage.getItem("highScore");
+    this.yourScore.innerHTML = this.score;
   }
 }
