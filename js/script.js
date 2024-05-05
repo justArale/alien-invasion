@@ -32,7 +32,7 @@ window.onload = function () {
     const stats = document.getElementById("game-stats");
     stats.style.display = "none";
   }
-
+  ///7///
   // function that handles the keydown event
   function handleKeydown(event) {
     const key = event.key;
@@ -41,6 +41,8 @@ window.onload = function () {
       // "ArrowUp",
       "ArrowRight",
       // "ArrowDown",
+      "a",
+      "d",
     ];
     // Check if the pressed key is on the possibleKeyStrokes array
     if (possibleKeystrokes.includes(key)) {
@@ -49,12 +51,14 @@ window.onload = function () {
       // Update player's directionX and directionY based on the pressed key
       switch (key) {
         case "ArrowLeft":
+        case "a":
           game.player.directionX = -5; // higher number = faster
           break;
         // case "ArrowUp":
         //   game.player.directionY = -5;
         //   break;
         case "ArrowRight":
+        case "d":
           game.player.directionX = 5;
           break;
         // case "ArrowDown":
