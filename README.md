@@ -1,6 +1,6 @@
 # Alien Invasion Game
 
-![Alien Invasion](images/Preview.png)
+![Alien Invasion](images/preview.jpg)
 
 ## Description
 

@@ -4,6 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
 h1,
@@ -28,8 +29,11 @@ h1 {
 
 body {
   text-align: center;
-  background-image: url(../images/background/background.jpg);
+  background-image: url(../images/background.jpg);
   background-size: cover;
+  background-position: center center;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 #game-start-screen {
