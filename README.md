@@ -24,6 +24,6 @@ Enjoy the adrenaline-pumping action of Alien Invasion and embark on a journey ba
 
 To play the game, simply open the `index.html` file in your web browser.
 
-## Credits
+## ⚖️ Credits & License
 
-Game created by [Arale](https://github.com/justArale).
+Copyright (C) 2024 [Arale](https://github.com/justArale) - Released under the [MIT License](https://github.com/justArale/alien-invasion/blob/main/LICENSE).
