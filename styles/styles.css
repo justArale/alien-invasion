@@ -172,3 +172,7 @@ button::after {
   color: #80ffaa;
   text-shadow: 0 0 12px rgba(128, 255, 170, 0.75);
 }
+
+.newHighscore {
+  display: none;
+}

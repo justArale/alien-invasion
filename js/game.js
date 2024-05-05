@@ -7,10 +7,20 @@ class Game {
     this.gameContainer = document.getElementById("game-container");
     this.stats = document.getElementById("game-stats");
     this.livesContainer = document.getElementById("lives");
+    // for old highscore container
     this.highScoreContainer = document.querySelector(
-      "#end-screen-header .highScore"
+      "#end-screen-header .oldHighscore .highScore"
     );
     this.yourScore = document.querySelector(".yourScoreValue");
+    // for new highscore
+    this.oldHighscore = document.querySelector(".oldHighscore");
+    this.newHighscore = document.querySelector(".newHighscore");
+    this.newHighScoreContainer = document.querySelector(
+      "#end-screen-header .newHighscore .highScore"
+    );
+    this.yourNewScore = document.querySelector(
+      "#end-screen-header .newHighscore .yourScoreValue"
+    );
     this.player = new Player(
       this.gameScreen,
       200,
@@ -141,9 +151,9 @@ class Game {
       }
     }
 
-    if (this.highScore < this.score) {
-      this.setHighScore(this.score);
-    }
+    // if (this.highScore < this.score) {
+    //   this.setHighScore(this.score);
+    // }
   }
 
   // Set highscore to localstorage
@@ -171,6 +181,14 @@ class Game {
   showEndScreen() {
     this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
+
+    if (this.score > this.highScore) {
+      this.newHighscore.style.display = "block";
+      this.oldHighscore.style.display = "none";
+      this.newHighScoreContainer.innerHTML = localStorage.getItem("highScore");
+      this.setHighScore(this.score);
+      this.yourNewScore.innerHTML = this.score;
+    }
 
     // Set highscore from localstorage to the end screen
     this.highScoreContainer.innerHTML = localStorage.getItem("highScore");
